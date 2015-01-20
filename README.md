@@ -1,32 +1,39 @@
-# ember-switch
-A switch component for ember.
+# ember-bootstrap-badge
+A bootstrap badge component for ember.
 
 #### Installation:
-* This package is available via bower:  `bower install ember-switch`
-* Alternatively, you can just download this package and include dist/ember-switch.min.js, and dist/ember-switch.css in your project
+* This package is available via bower:  `bower install ember-bootstrap-badge`
+* Alternatively, you can just download this package and include dist/ember-bootstrap-badge.min.js in your project
 
 #### Usage:
 The component takes the following parameters:
-* isChecked: (true || false) *// (whether switch is on or off)*
-* isDisabled: (true || false) *// (whether switch is enabled or disabled)*
-* labelOn: (true || false) *// (the text shown when switch is ON)*
-* labelOff: (true || false) *// (the text shown when switch is OFF)*
-* hideText: (true || false) *// (will hide the switch text when true)*
+* highlight: (true || false) *// (whether or not to apply dynamic colors to the badge - REQUIRES that statusFunction is also defined)*
+* statusFunction: (true || false) *// (the function that returns the status of the badge - should return 'success', 'danger', 'warning', or 'info')*
+* value: (true || false) *// (the value that will be passed to the statusFunction, and/or valueFormatter)*
+* valueFormatter: (true || false) *// (a function for formatting the value before it is displayed)*
 
 **EXAMPLE:**
 ```javascript
 var controller = Em.Controller.extend({
-  switchChecked: true,
-  switchDisabled: false
+  valueFormatter: function(value){
+    return value + '%';
+  },
+  value: 90,
+  statusFunction: function(value){
+    if(value >= 80){
+      return 'success';
+    }else if(value >= 70){
+      return 'warning';
+    }else if(value < 70){
+      return 'danger';
+    }
+  }
 });
 
-{{switch-component
-labelOn='On'
-labelOff='Off'
-isCheckedBinding=switchChecked
-isDisabledBinding=switchDisabled
+{{badge-component
+highlight=true
+valueFormatter=valueFormatter
+statusFunction=statusFunction
+value=value
 }}
 ```
-
-#### Custom Styling:
-You can style this switch by overriding the CSS specified in dist/ember-switch.css
