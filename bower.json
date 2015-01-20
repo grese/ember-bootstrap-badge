@@ -1,0 +1,31 @@
+{
+  "name": "ember-bootstrap-badge",
+  "version": "0.0.1",
+  "homepage": "https://github.com/grese/ember-bootstrap-badge",
+  "authors": [
+    "grese <grese@yahoo-inc.com>"
+  ],
+  "main": [
+    "dist/ember-bootstrap-badge.min.js",
+    "dist/ember-bootstrap-badge.css"
+  ],
+  "description": "A bootstrap badge component for ember",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "tests",
+    "build",
+    "Gruntfile.js",
+    "karma.conf.js",
+    "package.json"
+  ],
+  "dependencies": {
+    "ember": "~1.8.1",
+    "bootstrap": ">=3.0"
+  },
+  "devDependencies": {
+    "ember-qunit-builds": "git://github.com/rwjblue/ember-qunit-builds.git"
+  }
+}
