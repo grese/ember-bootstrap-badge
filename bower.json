@@ -5,10 +5,7 @@
   "authors": [
     "grese <grese@yahoo-inc.com>"
   ],
-  "main": [
-    "dist/ember-bootstrap-badge.min.js",
-    "dist/ember-bootstrap-badge.css"
-  ],
+  "main": "dist/ember-bootstrap-badge.min.js",
   "description": "A bootstrap badge component for ember",
   "license": "MIT",
   "ignore": [

@@ -2,7 +2,7 @@
     'use strict';
 
     var BadgeComponent = Em.Component.extend({
-        highlight: true,
+        highlight: false,
         tagName: 'span',
         classNames: ['badge-component'],
         classNameBindings: ['hasValue:badge', 'statusColor'],
